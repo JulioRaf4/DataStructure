@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
-import item
+from item import Item
 
 
 class Disco(Item):
     def __init__(self, titulo, ano_lancamento, comentario, nome_artista, quantidade_faixas):
         super().__init__(titulo, ano_lancamento, comentario)
-        self.nome_artista = nome_artista
-        self.quantidade_faixas = quantidade_faixas
-        self.midia = ""  # Contrutor padrão
+        self.nome_artista = nome_artista  # Construtor especifico
+        self.quantidade_faixas = quantidade_faixas  # Construtor especifico
+        self.midia = ""  # Construtor padrão
 
     def get_nome_artista(self):
         return self.nome_artista
@@ -26,7 +26,7 @@ class Disco(Item):
 
     def set_midia(self, midia):
         self.midia = midia
-    
+
     @abstractmethod
     def lista_informacoes(self):
         pass
