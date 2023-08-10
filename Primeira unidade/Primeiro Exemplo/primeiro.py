@@ -30,7 +30,7 @@ class Item:
         self.__comentario = comentario
 
     # Usei o decorator @abstractmethod
-    # Para intanciar o metodo abastrato 
+    # Para instanciar o metodo abastrato 
     @abstractmethod
     def lista_informacoes(self):
         pass
