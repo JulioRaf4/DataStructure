@@ -1,12 +1,12 @@
-from abc import ABC, abastractmethod
+from abc import ABC, abstractmethod
 
 
-# Como o python não tem algo como 
-# > private String titulo; < 
+# Como o python não tem algo como
+# > private String titulo; <
 # Usei __titulo como um bom dev python
 
-class Item:
-    def __ini__(self, titulo, ano_lancamento, comentario):
+class Item(ABC):
+    def __init__(self, titulo, ano_lancamento, comentario):
         self.__titulo = titulo
         self.__ano_lancamento = ano_lancamento
         self.__comentario = comentario
@@ -18,11 +18,11 @@ class Item:
         self.__titulo = titulo
 
     def get_ano_lancamento(self):
-        return self.ano_lancamento
+        return self.__ano_lancamento
 
     def set_ano_lancamento(self, ano_lancamento):
         self.__ano_lancamento = ano_lancamento
-    
+
     def get_comentario(self):
         return self.__comentario
 
@@ -30,7 +30,7 @@ class Item:
         self.__comentario = comentario
 
     # Usei o decorator @abstractmethod
-    # Para instanciar o metodo abastrato 
+    # Para instanciar o metodo abastrato
     @abstractmethod
     def lista_informacoes(self):
         pass
