@@ -1,7 +1,7 @@
-from classes.disco import Disco
 from classes.filme import Filme
 from classes.locadora import Locadora
-
+from classes.disco import Disco
+from classes.item import Item
 
 locadora = Locadora()
 disco1 = Disco("Thriller", 1982, "Um dos álbuns mais vendidos de todos os tempos", "Michael Jackson", 9, "CD")
