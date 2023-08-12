@@ -29,4 +29,9 @@ class Disco(Item):
 
     @abstractmethod
     def lista_informacoes(self):
-        pass
+        print("Titulo: {self.titulo}")
+        print("Ano lançamento: {self.ano_lancamento}")
+        print("Comentario : {self.comentario}")
+        print("Nome do artista: {self.nome_artista}")
+        print("Quantidade de faixas: {self.quantidade_faixas}")
+        print("Tipo de mídia: {self.midia}")
