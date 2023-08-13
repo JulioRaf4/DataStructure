@@ -9,8 +9,13 @@ filme2 = Filme("Pulp Fiction", 1994, "Um filme cult", "Julio", "Humor")
 
 locadora.novoDisco(disco1)
 locadora.novoDisco(disco2)
+
+locadora.novoDisco(disco2) # teste de tamanho
+
 locadora.novoFilme(filme1)
 locadora.novoFilme(filme2)
 
-locadora.listarDiscos()
-locadora.listarFilmes()
+locadora.novoFilme(filme2) # teste de tamanho
+
+locadora.listarDiscos() # listar discos
+locadora.listarFilmes() # listar filmes

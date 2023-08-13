@@ -116,14 +116,14 @@ class Locadora:
         self.array_filme = []
 
     def novoDisco(self, disco):
-        if self.indiceD <= 2:
+        if self.indiceD < 2:
             self.array_disco.append(disco)
             self.indiceD += 1
         else:
             print("Capacidade máxima atingida.")
 
     def novoFilme(self, Filme):
-        if self.indiceF <= 2:
+        if self.indiceF < 2:
             self.array_filme.append(Filme)
             self.indiceF += 1
         else:
