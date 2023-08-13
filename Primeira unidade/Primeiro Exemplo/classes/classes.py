@@ -1,4 +1,3 @@
-from item import Item
 from abc import ABC, abstractmethod
 
 
@@ -62,17 +61,18 @@ class Disco(Item):
     def set_midia(self, midia):
         self.midia = midia
 
-    @abstractmethod
     def lista_informacoes(self):
-        print("Titulo: {self.titulo}")
-        print("Ano lançamento: {self.ano_lancamento}")
-        print("Comentario : {self.comentario}")
-        print("Nome do artista: {self.nome_artista}")
-        print("Quantidade de faixas: {self.quantidade_faixas}")
-        print("Tipo de mídia: {self.midia}")
+        print(f"========== Informações do Disco ==========")
+        print(f"Titulo : \t\t {self.get_titulo()}")
+        print(f"Ano lançamento : \t {self.get_ano_lancamento()}")
+        print(f"Comentario : \t\t {self.get_comentario()}")
+        print(f"Nome do artista : \t {self.nome_artista}")
+        print(f"Quantidade de faixas : \t {self.quantidade_faixas}")
+        print(f"Tipo de mídia : \t {self.midia}")
+        print("=" * 40)
 
 
-class Disco(Item):
+class Filme(Item):
     def __init__(self, titulo, ano_lancamento, comentario, nome_diretor, genero_do_filme):
         super().__init__(titulo, ano_lancamento, comentario)
         self.nome_diretor = nome_diretor  # Construtor especifico
@@ -97,22 +97,23 @@ class Disco(Item):
     def set_duracao(self, duracao):
         self.duracao = duracao
 
-    @abstractmethod
     def lista_informacoes(self):
-        print("Titulo: {self.titulo}")
-        print("Ano lançamento: {self.ano_lancamento}")
-        print("Comentario : {self.comentario}")
-        print("Nome do diretor: {self.nome_diretor}")
-        print("Gênero do filme: {self.genero_do_filme}")
-        print("Duração do filme: {self.duracao}")
+        print("========== Informações do Filme ==========")
+        print(f"Título: {self.get_titulo()}")
+        print(f"Ano de Lançamento: {self.get_ano_lancamento()}")
+        print(f"Comentário: {self.get_comentario()}")
+        print(f"Nome do Diretor: {self.nome_diretor}")
+        print(f"Gênero do Filme: {self.genero_do_filme}")
+        print(f"Duração: {self.duracao}")
+        print("=" * 40)
 
 
 class Locadora:
     def __init__(self):
         self.indiceD = 0
         self.indiceF = 0
-        self.array_disco = [None, None]
-        self.array_filme = [None, None]
+        self.array_disco = []
+        self.array_filme = []
 
     def novoDisco(self, disco):
         if self.indiceD <= 2:
@@ -132,6 +133,6 @@ class Locadora:
         for x in self.array_disco:
             x.lista_informacoes()
 
-    def listarFilme(self):
+    def listarFilmes(self):
         for x in self.array_filme:
             x.lista_informacoes()
