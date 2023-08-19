@@ -1,25 +1,17 @@
 from classes.classes import Vetor
 
-a = Vetor(5)
+a = Vetor(10)
 
 print(a)
-a.adiciona(1, "NADA")
+a.adiciona(4, "$$$$")
 print(a)
 
-a.adiciona_inicio("INICIO")
-a.adiciona_fim("FIM")
-
+a.adiciona_inicio("INICIO 1")
+a.adiciona_fim("FIM 1")
 print(a)
 
-print(a.existe_dado(0))
-print(a.existe_dado(2))
+a.adiciona_inicio("INICIO 2")
+print(a)
 
-print(f'Tamanho -> {a.tamanho()}')
-
-a.adiciona(2, "Dois")
-a.adiciona(3, "Três")
-
-print(f'Tamanho -> {a.tamanho()}')
-
-a.redimensionar()
+a.adiciona_inicio("INICIO 3")
 print(a)
