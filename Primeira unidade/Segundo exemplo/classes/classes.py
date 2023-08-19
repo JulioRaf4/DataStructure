@@ -21,9 +21,9 @@ class Vetor:
             return True
         else:
             return False
-        
+
     def recupera(self, posicao):
-        return self.dados[posicao]    
+        return self.dados[posicao]
 
     def vazio(self, posicao):
         if self.dados[posicao]:
@@ -33,24 +33,25 @@ class Vetor:
 
     def remove(self, posicao):
         self.dados[posicao] = None
-        
+
     def remove_fim(self):
         self.dados[-1] = None
-        
+
     def remove_inicio(self):
         self.dados[0] = None
-    
+
     def tamanho(self):
         c = 0
         for i in range(self.x):
             if self.dados[i]:
                 c += 1
         return c
-    
+
     def limpa(self):
         for i in range(self.x):
             self.dados[i] = None
-            
+
     def redimensionar(self):
         if self.tamanho() == self.x:
-            self.dados = [None]*self.x
+            for i in range(self.x):
+                self.dados.append(None)

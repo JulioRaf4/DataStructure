@@ -21,5 +21,5 @@ a.adiciona(3, "Três")
 
 print(f'Tamanho -> {a.tamanho()}')
 
-a.redimensionar
+a.redimensionar()
 print(a)
