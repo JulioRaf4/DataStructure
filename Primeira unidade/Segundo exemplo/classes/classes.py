@@ -11,7 +11,7 @@ class Vetor:
         self.dados[posicao] = elemento
 
     def adiciona_inicio(self, elemento):
-        self.empurra()
+        self.empurra_para_direita()
         self.dados[0] = elemento
 
     def adiciona_fim(self, elemento):
@@ -57,6 +57,12 @@ class Vetor:
             for i in range(self.x):
                 self.dados.append(None)
 
-    def empurra(self):
-        for i in range(self.tamanho - 1, 0, -1):
+    def empurra_para_direita(self):
+        for i in range(self.tamanho() - 1, 0, -1):
             self.dados[i] = self.dados[i - 1]
+            
+    def empurra_para_esquerda(self):
+        for i in range(self.tamanho() - 1, 0, -1):
+            self.dados[i] = self.dados[i - 1]
+            
+            
