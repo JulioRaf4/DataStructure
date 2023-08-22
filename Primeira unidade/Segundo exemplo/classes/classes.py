@@ -11,6 +11,7 @@ class Vetor:
         self.dados[posicao] = elemento
 
     def adiciona_inicio(self, elemento):
+        self.redimensionar()
         self.empurra_para_direita()
         self.dados[0] = elemento
 
@@ -33,13 +34,23 @@ class Vetor:
             return True
 
     def remove(self, posicao):
-        self.dados[posicao] = None
+        x = self.vazio(posicao)
+        if x:
+            self.dados[posicao] = None
+        else:
+            pass
 
     def remove_fim(self):
-        self.dados[-1] = None
-
+        x = self.vazio(-1)
+        if x:
+            self.dados[-1] = None
+        else: 
+            pass
+        
     def remove_inicio(self):
-        self.dados[0] = None
+        x = self.vazio(0)
+        if x:
+            self.dados[0] = None
 
     def tamanho(self):
         c = 0
@@ -58,11 +69,8 @@ class Vetor:
                 self.dados.append(None)
 
     def empurra_para_direita(self):
-        for i in range(self.tamanho() - 1, 0, -1):
-            self.dados[i] = self.dados[i - 1]
-            
-    def empurra_para_esquerda(self):
-        for i in range(self.tamanho() - 1, 0, -1):
-            self.dados[i] = self.dados[i - 1]
+        for i in range(self.tamanho() - 1, -1, -1):
+            self.dados[i + 1] = self.dados[i]
+        self.dados[0] = None
             
             

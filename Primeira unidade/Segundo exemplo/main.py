@@ -7,10 +7,8 @@ a.adiciona(4, "$$$$")
 print(a)
 
 a.adiciona_inicio("INICIO 1")
-
 print(a)
+
 
 a.adiciona_inicio("INICIO 2")
 print(a)
-
-
