@@ -4,6 +4,8 @@ class Node:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return str(self.data)
 
 class LinkedList:
     def __init__(self):
@@ -30,7 +32,30 @@ class LinkedList:
             if pointer:
                 pointer = pointer.next
             else:
-                raise IndexError()
+                raise IndexError("list index out of range")
+        if pointer:
+            return pointer.data
+        else:
+            raise IndexError("list index out of range")
 
     def __setitem__(self, index, data):
-        pass
+        pointer = self.head
+        for i in range(index):
+            if pointer:
+                pointer = pointer.next
+            else:
+                raise IndexError("list index out of range")
+        if pointer:
+            pointer.data = data
+        else:
+            raise IndexError("list index out of range")
+
+    def index(self, data):
+        pointer = self.head
+        i = 0
+        while pointer:
+            if pointer.data == data:
+                return i
+            pointer = pointer.next
+            i += 1
+        raise ValueError("data not found")
