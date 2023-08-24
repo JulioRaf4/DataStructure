@@ -1,0 +1,38 @@
+ Public ListaEncadeada () *
+o Construtor padrão;
+
+ public void adiciona (T elemento, int posicao) *
+o Adiciona um elemento na posição indicada;
+
+ public void adicionaInicio (T elemento) *
+o Adiciona o elemento no início da Lista Encadeada;
+
+ public adicionaFim (T elemento) 
+o Adiciona o elemento no fim da Lista Encadeada
+
+ public boolean existeDado(T elemento)
+o Verifica se o dado existe na Lista Encadeada;
+
+ public T Recupera(int pos) *
+o Recupera o objeto da posição passada como parâmetro;
+
+ public void remove(int posicao)
+o Remove o objeto da Lista Encadeada na posição passada como parâmetro;
+
+ public void removeInicio()
+o Remove a primeira posição da Lista Encadeada;
+
+ public void removeFim()
+o Remove a última posição da Lista Encadeada;
+
+ public int tamanho() *
+o Retorna o tamanho da Lista Encadeada (quantidade de elementos inseridos)
+
+ public void limpa()
+o Exclui todos os elementos da Lista Encadeada;
+
+Obs:
+1. Todas as iterações que percorrem o vetor devem ser realizadas com o padrão Iterador criado em sala de aula;
+2. Tomar os cuidados necessários para inserir e remover corretamente. Lembre-se de verificar se há dados e/ou se a
+lista está vazia.
+3. Faça tratamento de exceções para todos os métodos que podem acessar uma posição vazia ou inválida;

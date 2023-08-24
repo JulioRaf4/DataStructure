@@ -59,3 +59,16 @@ class LinkedList:
             pointer = pointer.next
             i += 1
         raise ValueError("data not found")
+    
+    def append_fim(self, data):
+        pass
+    
+    def clear(self):
+        pass
+    
+    def pop_last(self):
+        pass
+    
+    def pop_first(self):
+        pass
+    
