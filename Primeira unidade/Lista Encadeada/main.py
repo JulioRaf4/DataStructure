@@ -10,6 +10,12 @@ a.append(n2)
 a.append(n3)
 print(f'Tamanho de a = {len(a)}')
 
-print(f'Primeira posição da lista = {a[0]}')
+for i in range(len(a)):
+    print(a[i])
 
-print(a.index(n3))
+print(f"> {a.pop_last()}" )
+
+print("~~~~~~~~~~~~~~~~~~~~~~")
+
+for i in range(len(a)):
+    print(a[i])

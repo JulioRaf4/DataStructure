@@ -11,6 +11,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.__size = 0
+        self.tail = None
 
     def append(self, data):
         if self.head:
@@ -60,15 +61,17 @@ class LinkedList:
             i += 1
         raise ValueError("data not found")
     
-    def append_fim(self, data):
+    def append_inicio(self, data):
         pass
     
     def clear(self):
-        pass
+        self.head = None
+        self.__size = 0
     
     def pop_last(self):
-        pass
-    
+        self[self.__size - 1] = None
+        self.__size -= 1
+
     def pop_first(self):
         pass
     
