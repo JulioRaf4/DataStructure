@@ -62,7 +62,10 @@ class LinkedList:
         raise ValueError("data not found")
     
     def append_inicio(self, data):
-        pass
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+        self.__size += 1
     
     def clear(self):
         self.head = None
@@ -73,5 +76,8 @@ class LinkedList:
         self.__size -= 1
 
     def pop_first(self):
-        pass
-    
+        if self.head:
+            self.head = self.head.next
+            self.__size -= 1
+        else:
+            raise IndexError("pop from empty list")
