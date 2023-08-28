@@ -63,17 +63,26 @@ class LinkedList:
     
     def append_inicio(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
-        self.__size += 1
+        if self.head:
+            new_node.next = self.head
+            self.head = new_node
+            self.__size += 1
+        else:
+            raise ValueError("list is empty")
     
     def clear(self):
-        self.head = None
-        self.__size = 0
+        if self.size > 0:
+            self.head = None
+            self.__size = 0
+        else:
+            raise ValueError("list is alredy empty")
     
     def pop_last(self):
-        self[self.__size - 1] = None
-        self.__size -= 1
+        if self.head:
+            self[self.__size - 1] = None
+            self.__size -= 1
+        else:
+            raise IndexError("pop from empty list")
 
     def pop_first(self):
         if self.head:
