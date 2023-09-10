@@ -80,7 +80,7 @@ int main()
     node->previous = tail;
     tail->next = node;
     tail = node;
-
+    
     node = new Node();
     node->value = 7;
     node->next = nullptr;
