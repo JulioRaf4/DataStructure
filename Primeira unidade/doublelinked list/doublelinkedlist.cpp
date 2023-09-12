@@ -103,20 +103,6 @@ int main() {
     tail->next = node;
     tail = node;
 
-    node = new Node();
-    node->value = 6;
-    node->next = nullptr;
-    node->previous = tail;
-    tail->next = node;
-    tail = node;
-
-    node = new Node();
-    node->value = 7;
-    node->next = nullptr;
-    node->previous = tail;
-    tail->next = node;
-    tail = node;
-
     insertAtBeginning(head, 99);
     insertAtEnd(tail, 55);
     printForward(head);
