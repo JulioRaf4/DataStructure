@@ -17,7 +17,7 @@ void printForward(Node *head) {
         traverse = traverse->next;
     }
 }
-// test
+
 void printBackward(Node *tail) {
     Node *traverse = tail;
     while (traverse != nullptr) {
@@ -84,8 +84,28 @@ void clearList(Node *head, Node *tail) {
     tail = nullptr;
 }
 
-int main() {
+bool existData(Node *head, int value) {
+    Node *current = head;
+    while (current != nullptr) {
+        if (current->value == value){
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
 
+int getSize(Node *head) {
+    int c = 0;
+    Node *current = head;
+    while (current != nullptr) {
+        c++;
+        current = current->next;
+    }
+    return c;
+}
+
+int main() {
     Node *head;
     Node *tail;
 
@@ -103,9 +123,18 @@ int main() {
     tail->next = node;
     tail = node;
 
+    int t = 55;
+
     insertAtBeginning(head, 99);
     insertAtEnd(tail, 55);
     printForward(head);
-    getSize(node);
-    cin.get();
+    bool a = existData(head, t);
+    std::cout<< a << endl;
+    int size = getSize(head);
+    std::cout<< "Size = " << size << endl;
+    clearList(head, tail);
+    
+    
+    
+    return 0;
 }
