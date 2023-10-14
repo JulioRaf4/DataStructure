@@ -1,14 +1,15 @@
 class Node:
-    def __init__(self, *args):
-        self.data = args
+    def __init__(self, data):
+        self.data = data
         self.next = None
-        
+
+
 class Stack:
     def __init__(self):
         self._size = 0
         self.top = None
 
-    def pull_on_top(self, data):
+    def push(self, data):
         new_node = Node(data)
         if self.top is None:
             self.top = new_node
@@ -17,22 +18,39 @@ class Stack:
             self.top = new_node
         self._size += 1
 
+    def print_stack(self):
+        if self.top:
+            node = self.top
+            while node:
+                print(f'[{node.data}]')
+                node = node.next
+        else:
+            pass
+    
     def top_(self):
-        if self.top: return self.top.data
-        else: raise IndexError("Lista vazia")
-    
-    def push(self):
-        pass
-    
+        if self.top:
+            return self.top.data
+        else:
+            raise IndexError("Lista vazia")
+
     def pop(self):
-        pass
-    
+        if self.top:
+            self.top.data = None
+            self.top = self.top.next
+            self._size -= 1
+        else:
+            pass
+
     def __size__(self):
         return self._size
 
 
 stack = Stack()
-stack.pull_on_top(10)
-stack.pull_on_top(23)
-stack.pull_on_top(40)
-print(stack.top_())
+stack.push(10)
+stack.push(23)
+stack.push(40)
+
+stack.pop()
+
+
+stack.print_stack()
