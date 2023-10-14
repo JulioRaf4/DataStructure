@@ -22,11 +22,17 @@ class Stack:
         if self.top:
             node = self.top
             while node:
-                print(f'[{node.data}]')
+                print(f"[{node.data}]")
                 node = node.next
         else:
             pass
-    
+
+    def is_empty(self) -> bool:
+        if self._size == 0:
+            return True
+        else:
+            return False
+
     def top_(self):
         if self.top:
             return self.top.data
@@ -46,6 +52,7 @@ class Stack:
 
 
 stack = Stack()
+stack.is_empty()
 stack.push(10)
 stack.push(23)
 stack.push(40)
