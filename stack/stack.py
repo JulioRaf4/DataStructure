@@ -45,7 +45,7 @@ class Stack:
         if self.top:
             return self.top.data
         else:
-            raise IndexError("Lista vazia")
+            raise IndexError("List is empty")
 
     def pop(self):
         # Remove the last element from the stack
