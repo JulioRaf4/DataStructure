@@ -28,3 +28,29 @@ class Cache:
 
             self.cache[key] = value
             self.ac_order.append(key)
+
+    def closed_collision(self, key, value):
+        # Força a colisão de chaves com o mesmo índice na tabela hash
+        index = hash(key) % self.capacity
+        # Encontra a próxima posição disponível usando sondagem linear
+        while index in self.cache:
+            index = (index + 1) % self.capacity
+        # Insere a chave forçando a colisão
+        self.cache[index] = value
+        self.access_order.append(index)
+
+    def open_collision(self, key, value):
+        # Força a colisão de chaves na mesma posição usando listas ligadas
+        index = hash(key) % self.capacity
+        # Verifica se já há um item nesta posição
+        if index in self.cache:
+            # Se já existir, cria uma lista ligada
+            if not isinstance(self.cache[index], list):
+                self.cache[index] = [self.cache[index]]
+            # Adiciona o novo item à lista ligada
+            self.cache[index].append(value)
+        else:
+            # Se não houver colisão, insere o valor normalmente
+            self.cache[index] = value
+        self.access_order.append(index)
+        
