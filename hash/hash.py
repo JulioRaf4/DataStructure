@@ -53,4 +53,13 @@ class Cache:
             # Se não houver colisão, insere o valor normalmente
             self.cache[index] = value
         self.access_order.append(index)
+
+    def hash_perfeito(self, key):
+        A = (5 ** 0.5 - 1) / 2
+        frac_part = key *A - int(key * A)
+        index = int(self.capacity * frac_part)
+        return index
         
+    def hash_imperfeito(self, key):
+        #usa a propria função hash embutida
+        return hash(key) % self.capacity
